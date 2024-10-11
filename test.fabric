@@ -1,0 +1,47 @@
+[
+    {
+      "INVOKE": "InitLedger"
+    },
+    {
+      "invoke": "CreateAsset",
+      "args": [ 
+        "ASSET4",
+        "Ashwath",
+        1000
+      ]
+    },
+    {
+      "query": "QueryAsset",
+      "args": [
+        "ASSET4"
+      ]
+    },
+    {
+      "invoke": "UpdateAsset",
+      "args": [
+        "ASSET1",
+        "NewOwner",
+        500
+      ]
+    },
+    {
+      "query": "QueryAsset",
+      "args": [
+        "ASSET1"
+      ]
+    },
+    {
+      "invoke": "DeleteAsset",
+      "args": [
+        "ASSET2"
+      ]
+    },
+    {
+      "invoke": "GetAssetsByRange",
+      "args": [
+        "ASSET1",
+        "ASSET3"
+      ]
+    }
+  ]
+  

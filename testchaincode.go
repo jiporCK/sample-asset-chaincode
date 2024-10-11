@@ -5,7 +5,6 @@ import (
 	"fmt"
 
 	"github.com/hyperledger/fabric-contract-api-go/contractapi"
-	"github.com/hyperledger/fabric-protos-go/peer"
 )
 
 type Asset struct {
@@ -88,7 +87,6 @@ func (s *SimpleAsset) UpdateAsset(ctx contractapi.TransactionContextInterface, a
 	return ctx.GetStub().PutState(assetId, assetJson)
 }
 
-
 func (s *SimpleAsset) DeleteAsset(ctx contractapi.TransactionContextInterface, assetId string) error {
 
 	asset, err := s.QueryAsset(ctx, assetId)
@@ -126,30 +124,30 @@ func (s *SimpleAsset) GetAssetsByRange(ctx contractapi.TransactionContextInterfa
 }
 
 // GetAssetsByRangeWithPagination retrieves assets by range with pagination support
-func (s *SimpleAsset) GetAssetsByRangeWithPagination(ctx contractapi.TransactionContextInterface, startKey string, endKey string, pageSize int32, bookmark string) ([]*Asset, *peer.QueryResponseMetadata, error){
-    resultsIterator, metadata, err := ctx.GetStub().GetStateByRangeWithPagination(startKey, endKey, pageSize, bookmark)
-    if err != nil {
-        return nil, nil, err
-    }
-    defer resultsIterator.Close()
+// func (s *SimpleAsset) GetAssetsByRangeWithPagination(ctx contractapi.TransactionContextInterface, startKey string, endKey string, pageSize int32, bookmark string) ([]*Asset, *peer.QueryResponseMetadata, error){
+//     resultsIterator, metadata, err := ctx.GetStub().GetStateByRangeWithPagination(startKey, endKey, pageSize, bookmark)
+//     if err != nil {
+//         return nil, nil, err
+//     }
+//     defer resultsIterator.Close()
 
-    var assets []*Asset
-    for resultsIterator.HasNext() {
-        queryResponse, err := resultsIterator.Next()
-        if err != nil {
-            return nil, nil, err
-        }
+//     var assets []*Asset
+//     for resultsIterator.HasNext() {
+//         queryResponse, err := resultsIterator.Next()
+//         if err != nil {
+//             return nil, nil, err
+//         }
 
-        var asset Asset
-        err = json.Unmarshal(queryResponse.Value, &asset)
-        if err != nil {
-            return nil, nil, err
-        }
-        assets = append(assets, &asset)
-    }
+//         var asset Asset
+//         err = json.Unmarshal(queryResponse.Value, &asset)
+//         if err != nil {
+//             return nil, nil, err
+//         }
+//         assets = append(assets, &asset)
+//     }
 
-    return assets, metadata, nil
-}
+//     return assets, metadata, nil
+// }
 
 func main()  {
 	chaincode, err := contractapi.NewChaincode(new(SimpleAsset))
