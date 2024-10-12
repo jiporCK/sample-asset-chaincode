@@ -3,7 +3,7 @@
       "INVOKE": "InitLedger"
     },
     {
-      "invoke": "CreateAsset",
+      "INVOKE": "CreateAsset",
       "args": [ 
         "ASSET4",
         "Ashwath",
@@ -11,13 +11,13 @@
       ]
     },
     {
-      "query": "QueryAsset",
+      "QUERY": "QueryAsset",
       "args": [
-        "ASSET4"
+        "ASSET2"
       ]
     },
     {
-      "invoke": "UpdateAsset",
+      "INVOKE": "UpdateAsset",
       "args": [
         "ASSET1",
         "NewOwner",
@@ -25,19 +25,19 @@
       ]
     },
     {
-      "query": "QueryAsset",
+      "QUERY": "QueryAsset",
       "args": [
         "ASSET1"
       ]
     },
     {
-      "invoke": "DeleteAsset",
+      "INVOKE": "DeleteAsset",
       "args": [
         "ASSET2"
       ]
     },
     {
-      "invoke": "GetAssetsByRange",
+      "INVOKE": "GetAssetsByRange",
       "args": [
         "ASSET1",
         "ASSET3"
