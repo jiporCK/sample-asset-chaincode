@@ -37,6 +37,8 @@ func (s *SimpleAsset) InitLedger(ctx contractapi.TransactionContextInterface) er
 	return nil
 }
 
+
+
 func (s *SimpleAsset) QueryAsset(ctx contractapi.TransactionContextInterface, assetId string) (*Asset, error) {
 	assetJson, err := ctx.GetStub().GetState(assetId)
     if err != nil {

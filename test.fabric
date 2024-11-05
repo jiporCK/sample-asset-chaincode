@@ -6,14 +6,14 @@
       "INVOKE": "CreateAsset",
       "args": [ 
         "ASSET4",
-        "Ashwath",
-        1000
+        "JJ",
+        3000
       ]
     },
     {
       "QUERY": "QueryAsset",
       "args": [
-        "ASSET2"
+        "ASSET4"
       ]
     },
     {
@@ -33,14 +33,14 @@
     {
       "INVOKE": "DeleteAsset",
       "args": [
-        "ASSET2"
+        "ASSET4"
       ]
     },
     {
-      "INVOKE": "GetAssetsByRange",
+      "QUERY": "GetAssetsByRange",
       "args": [
         "ASSET1",
-        "ASSET3"
+        "ASSET5"
       ]
     }
   ]

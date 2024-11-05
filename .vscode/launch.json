@@ -8,7 +8,7 @@
             "name": "Debug Chaincode",
             "type": "hlf-go",
             "request": "launch",
-            "isCaas": false,
+            "isCaas": false
         },
     ]
 }
